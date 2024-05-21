@@ -1,0 +1,13 @@
+---
+// Portable Text is a JSON-based rich text specification for modern content management systems. It was developed by Sanity.io, a platform for structured content.
+
+// The main idea behind Portable Text is to treat rich text as structured data. This means that instead of storing formatted text as a single string (like HTML or Markdown), Portable Text stores it as a tree of content blocks with associated metadata.
+
+import { PortableText } from '@portabletext/react'
+
+const { body, components } = Astro.props
+---
+
+<div class=`body`>
+	<PortableText value={body} components={components} />
+</div>
