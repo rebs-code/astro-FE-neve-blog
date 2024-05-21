@@ -10,6 +10,20 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^4.8.6"
+    "@astrojs/react": "^3.0.6",
+    "@popperjs/core": "^2.11.8",
+    "@portabletext/react": "^3.0.11",
+    "@sanity/astro": "^2.1.4",
+    "@sanity/client": "^6.11.3",
+    "@sanity/image-url": "^1.0.2",
+    "@types/bootstrap": "^5.2.10",
+    "@types/react": "^18.2.38",
+    "@types/react-dom": "^18.2.17",
+    "astro": "^4.5.5",
+    "astro-bootstrap": "^0.6.2",
+    "bootstrap": "^5.3.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sanity": "^3.20.1"
   }
 }
