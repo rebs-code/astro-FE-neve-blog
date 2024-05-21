@@ -12,7 +12,8 @@ export interface Props {
 const {
     title = "Neve Blog",
     description = "A blog with all the latest news and updates from the tech world",
-    //image = getThumbnail("A community of music producers and enthusiasts"),
+    // image = getThumbnail("A community of music producers and enthusiasts"),
+	image,
 } = Astro.props
 ---
 
@@ -20,13 +21,15 @@ const {
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
+		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
+		<meta property="og:image" content={image} />
 		<title>{title}</title>
 	</head>
-	<body>
+	<body class="min-h-screen">
+		<Header/>
 		<slot />
 	</body>
 </html>
