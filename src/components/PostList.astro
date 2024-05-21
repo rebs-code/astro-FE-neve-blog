@@ -3,10 +3,8 @@ import PostCard from './PostCard.astro'
 import { getSanity } from '../lib/api';
 
 const blog = await getSanity([`*[_type == "blog"]`]);
-console.log(blog);
 ---
 <h2>This is the list of blog posts</h2>
 <div class="grid grid-cols-2 gap-4">
-  
     {blog.map(post => <PostCard post={post} />)}
   </div>
