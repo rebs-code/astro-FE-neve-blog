@@ -4,9 +4,9 @@ import Main from '../components/Main.astro';
 import Layout from '../layouts/Layout.astro';
 import { getSanity } from '../lib/api';
 import Jumbotron from '../components/Jumbotron.astro';
+import PostList from '../components/PostList.astro';
 
 const result = await getSanity([`*[_type == "home"]`]);
-console.log(result);
 const { sections } = result[0];
 
 ---
@@ -15,13 +15,15 @@ const { sections } = result[0];
 	<Main>
 		<H1 text="Neve Blog"/>
 	
-			{sections.map(section => {
-			  switch (section._type) {
-				case 'jumbotron':
-				  return <Jumbotron {...section} />;
-				default:
-				  return null;
-			  }
+		{sections.map(section => {
+			switch (section._type) {
+			  case 'jumbotron':
+				return <Jumbotron {...section} />;
+			  case 'postList':
+				return <PostList {...section} />;
+			  default:
+				return null;
+			}
 			})}
 		 
 </Layout>
