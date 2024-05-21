@@ -1,0 +1,25 @@
+---
+
+import PortableTextBody from "./PortableTextBody.astro";
+import { myPortableTextComponents } from "./PortableTextComponent";
+import  {urlForImage}  from "../lib/urlForImage";
+
+const {title, tag, text, image} = Astro.props;
+
+---
+
+<main>
+    <div>
+        <div>
+            <div>
+                <h1 class="text-primary">{title}</h1>
+                <h4>{tag}</h4>
+                <PortableTextBody body={text} components={myPortableTextComponents} />
+            </div>
+            <!-- image div -->
+             <div>
+                {image && <img src={urlForImage(image).url()} alt="placeholder"/>}
+            </div>
+        </div>
+    </div>
+</main>

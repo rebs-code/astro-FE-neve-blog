@@ -1,5 +1,5 @@
 import React from "react";
-import { urlForImage } from "../library/urlForImage";
+import { urlForImage } from "../lib/urlForImage";
 
 export const myPortableTextComponents = {
   types: {

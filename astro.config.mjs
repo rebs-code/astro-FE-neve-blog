@@ -31,9 +31,9 @@ export default defineConfig({
     }]
   },
   integrations: [sanityIntegration({
-    projectId: 'bno79kb2',
+    projectId: 'cpcy2oar',
     dataset: 'production',
-    apiVersion: '2024-05-20',
+    apiVersion: '2024-05-21',
     useCdn: false
   }), react(), tailwind()]
 });

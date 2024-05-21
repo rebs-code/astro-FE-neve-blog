@@ -2,10 +2,26 @@
 import H1 from '../components/H1.astro';
 import Main from '../components/Main.astro';
 import Layout from '../layouts/Layout.astro';
+import { getSanity } from '../lib/api';
+import Jumbotron from '../components/Jumbotron.astro';
+
+const result = await getSanity([`*[_type == "home"]`]);
+console.log(result);
+const { sections } = result[0];
+
 ---
 
 <Layout title="Neve Blog Homepage">
 	<Main>
 		<H1 text="Neve Blog"/>
-	</Main>
+	
+			{sections.map(section => {
+			  switch (section._type) {
+				case 'jumbotron':
+				  return <Jumbotron {...section} />;
+				default:
+				  return null;
+			  }
+			})}
+		 
 </Layout>
