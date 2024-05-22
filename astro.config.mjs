@@ -35,5 +35,7 @@ export default defineConfig({
     dataset: 'production',
     apiVersion: '2024-05-21',
     useCdn: false
-  }), react(), tailwind()]
+  }), react(), tailwind()],
+
+  site: 'https://www.my-site.dev', //add here final site domain to unlock more astro features and RSS feed
 });

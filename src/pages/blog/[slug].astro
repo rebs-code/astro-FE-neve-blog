@@ -11,8 +11,9 @@ import { myPortableTextComponents } from "../../components/PortableTextComponent
 
 
 export async function getStaticPaths() {
-  const posts = await getSanity(`*[_type == "blog"]`);
+  const posts = await getSanity(`*[_type == "blog"]`); //get all blog posts
 
+  // for each post, create a path and a prop
   return posts.map((post) => {
     return {
       params: { slug: post.slug.current },
