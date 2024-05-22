@@ -12,6 +12,7 @@ export async function GET(context) {
         link: `${context.site}/${post.slug.current}`,
         description: post.subtitle, // Replace with your actual description field
         pubDate: new Date(post.publishedAt).toUTCString(), // Replace with your actual publication date field
+        author: post.author,
     }));
 
     return rss({
