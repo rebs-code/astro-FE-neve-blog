@@ -27,5 +27,6 @@ export async function GET(context) {
         items: items,
         // (optional) inject custom xml
         customData: `<language>en-us</language>`,
+        stylesheet: '/rss/styles.xsl',
     });
 }
