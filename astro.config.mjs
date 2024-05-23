@@ -32,7 +32,7 @@ export default defineConfig({
   },
   integrations: [sanityIntegration({
     projectId: 'cpcy2oar',
-    dataset: 'production',
+    dataset: process.env.SANITY_STUDIO_DATASET || 'production',
     apiVersion: '2024-05-21',
     useCdn: false
   }), react(), tailwind()],
