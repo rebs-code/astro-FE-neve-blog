@@ -1,0 +1,80 @@
+---
+import H1 from '../components/H1.astro';
+import Main from '../components/Main.astro';
+import Layout from '../layouts/Layout.astro';
+
+
+
+---
+
+<Layout title="Neve Blog Subscribe">
+	<Main>
+		<H1 text="Subscribe"/>
+
+        <div id="mc_embed_shell">
+            <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
+      <div id="mc_embed_signup">
+          <form action="https://gmail.us22.list-manage.com/subscribe/post?u=aafcdd193e7329340fe4629d0&amp;id=1e66b0a9c3&amp;f_id=00d8c9e1f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+              <div id="mc_embed_signup_scroll"><h2>Subscribe</h2>
+                  <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+                  <div class="mc-field-group"><label for="mce-EMAIL">Indirizzo email <span class="asterisk">*</span></label><input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="" value=""></div>
+              <div id="mce-responses" class="clear">
+                  <div class="response" id="mce-error-response" style="display: none;"></div>
+                  <div class="response" id="mce-success-response" style="display: none;"></div>
+              </div><div aria-hidden="true" style="position: absolute; left: -5000px;"><input type="text" name="b_aafcdd193e7329340fe4629d0_1e66b0a9c3" tabindex="-1" value=""></div><div class="clear"><input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Subscribe"></div>
+          </div>
+      </form>
+      </div>
+      <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script><script type="text/javascript">(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';}(jQuery));var $mcj = jQuery.noConflict(true);</script></div>
+      
+            </Main>
+      
+		 
+</Layout>
+
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function () {
+        const form = document.getElementById("mc-embedded-subscribe-form");
+    
+        form.addEventListener("submit", function (e) {
+            e.preventDefault(); // Prevent the default form submission
+    
+            // Serialize form data to a query string
+            const formData = new FormData(form);
+            const serializedData = new URLSearchParams(formData).toString();
+    
+            // Define the JSONP callback function name
+            const callbackName = "handleMailchimpResponse";
+    
+            // Define the JSONP URL with callback parameter
+            const jsonpUrl =
+                "https://gmail.us22.list-manage.com/subscribe/post-json?u=aafcdd193e7329340fe4629d0&" +
+                serializedData +
+                "&c=" +
+                callbackName;
+    
+            // Create a script element for JSONP
+            const script = document.createElement("script");
+            script.src = jsonpUrl;
+    
+            // Define the JSONP callback function
+            window[callbackName] = function (response) {
+                // Handle the JSONP response as needed
+                if (response.result === "success") {
+                    console.log("Form submitted successfully.");
+                    // You can redirect or display a success message here
+                } else {
+                    console.error("Form submission failed.");
+                    // Handle errors here
+                }
+    
+                // Clean up by removing the script element and callback function
+                document.body.removeChild(script);
+                delete window[callbackName];
+            };
+    
+            // Append the script element to the document to initiate the JSONP request
+            document.body.appendChild(script);
+        });
+    });
+    </script>
