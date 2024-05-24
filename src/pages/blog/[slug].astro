@@ -21,10 +21,7 @@ import { myPortableTextComponents } from "../../components/PortableTextComponent
 // }
 
 const {slug} = Astro.params;
-
 const item = await getSanity(`*[_type == "blog" && slug.current == "${slug}"]`);
-
-
 const post = item[0];
 ---
 
