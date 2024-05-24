@@ -1,32 +1,31 @@
 ---
 import { getSanity } from '../../lib/api';
 import H1 from "../../components/H1.astro";
-import Jumbotron from "../../components/Jumbotron.astro";
 import Main from "../../components/Main.astro";
-import PostList from "../../components/PostList.astro";
 import Layout from "../../layouts/Layout.astro";
 import PortableTextBody from "../../components/PortableTextBody.astro";
 import { myPortableTextComponents } from "../../components/PortableTextComponent";
 
 
 
-export async function getStaticPaths() {
-  const posts = await getSanity(`*[_type == "blog"]`); //get all blog posts
+// export async function getStaticPaths() {
+//   const posts = await getSanity(`*[_type == "blog"]`); //get all blog posts
 
-  // for each post, create a path and a prop
-  return posts.map((post) => {
-    return {
-      params: { slug: post.slug.current },
-      props: { post },
-    };
-  });
-}
+//   // for each post, create a path and a prop
+//   return posts.map((post) => {
+//     return {
+//       params: { slug: post.slug.current },
+//       props: { post },
+//     };
+//   });
+// }
 
-type Props = {
-  post: any;
-};
+const {slug} = Astro.params;
 
-const { post } = Astro.props;
+const item = await getSanity(`*[_type == "blog" && slug.current == "${slug}"]`);
+
+
+const post = item[0];
 ---
 
 <Layout title={post.title}>
