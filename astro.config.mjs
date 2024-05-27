@@ -41,7 +41,8 @@ export default defineConfig({
     projectId: PUBLIC_SANITY_STUDIO_PROJECT_ID,
     dataset: PUBLIC_SANITY_STUDIO_DATASET,
     apiVersion: '2024-05-21',
-    useCdn: false
+    useCdn: false,
+    studioBasePath: "/admin"
   }), react(), tailwind()],
   site: 'https://www.my-site.dev' //add here final site domain to unlock more astro features and RSS feed
 });
