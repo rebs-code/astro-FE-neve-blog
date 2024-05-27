@@ -6,7 +6,10 @@ import react from '@astrojs/react';
 import tailwind from "@astrojs/tailwind";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
-import node from '@astrojs/node';
+import { loadEnv } from "vite";
+const { PUBLIC_SANITY_STUDIO_PROJECT_ID, PUBLIC_SANITY_STUDIO_DATASET } = loadEnv(process.env.NODE_ENV, process.cwd(), '');
+import netlify from "@astrojs/netlify";
+
 
 import netlify from "@astrojs/netlify";
 
@@ -35,8 +38,8 @@ export default defineConfig({
     }]
   },
   integrations: [sanityIntegration({
-    projectId: 'cpcy2oar',
-    dataset: process.env.SANITY_STUDIO_DATASET || 'production',
+    projectId: PUBLIC_SANITY_STUDIO_PROJECT_ID,
+    dataset: PUBLIC_SANITY_STUDIO_DATASET,
     apiVersion: '2024-05-21',
     useCdn: false
   }), react(), tailwind()],
