@@ -10,9 +10,6 @@ import { loadEnv } from "vite";
 const { PUBLIC_SANITY_STUDIO_PROJECT_ID, PUBLIC_SANITY_STUDIO_DATASET } = loadEnv(process.env.NODE_ENV, process.cwd(), '');
 import netlify from "@astrojs/netlify";
 
-
-import netlify from "@astrojs/netlify";
-
 // https://astro.build/config
 export default defineConfig({
   output: 'server',
