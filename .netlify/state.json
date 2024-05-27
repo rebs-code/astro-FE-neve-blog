@@ -1,0 +1,20 @@
+{
+	"geolocation": {
+		"data": {
+			"city": "Milan",
+			"country": {
+				"code": "IT",
+				"name": "Italy"
+			},
+			"subdivision": {
+				"code": "25",
+				"name": "Lombardy"
+			},
+			"timezone": "Europe/Rome",
+			"latitude": 45.4722,
+			"longitude": 9.1922
+		},
+		"timestamp": 1716805121491
+	},
+	"siteId": "98e04713-44a8-4767-af5b-bde50fb906a4"
+}
